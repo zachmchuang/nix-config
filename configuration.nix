@@ -15,6 +15,7 @@
     enable = true;
     efiSupport = true;
     device = "nodev";
+    useOSPober = true;
   };
 
   boot.loader.timeout = null; # wait forever at boot menu
@@ -74,16 +75,6 @@
   ];
 
   services.openssh.enable = true;
-  services.greetd = {
-    enable = true;
-    settings = {
-      default_session = {
-        command = "${pkgs.tuigreet}/bin/tuigreet --time --cmd niri-session";
-        user = "zach";
-      };
-    };
-  };
-
   security.polkit.enable = true;
   services.gnome.gnome-keyring.enable = true;
 

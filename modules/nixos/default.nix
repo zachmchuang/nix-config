@@ -1,5 +1,6 @@
 {
-	imports = [
-		./keyd.nix
-	];
-}	
+  imports = [
+    ./keyd.nix
+    ./greetd.nix
+  ];
+}
