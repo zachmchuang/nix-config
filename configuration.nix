@@ -5,7 +5,6 @@
 	imports =
 		[
 		./hardware-configuration.nix
-		./modules/keyd.nix
 		];
 
 	boot.loader.systemd-boot.enable = true;
@@ -23,14 +22,6 @@ networking.hostName = "zach-nix"; # Define your hostname.
 time.timeZone = "America/Montreal";
 
 i18n.defaultLocale = "en_US.UTF-8";
-# console = {
-#   font = "Lat2-Terminus16";
-#   keyMap = "us";
-#   useXkbConfig = true; # use xkb.options in tty.
-# };
-
-# Enable CUPS to print documents.
-# services.printing.enable = true;
 
 services.pipewire = {
   enable = true;
@@ -52,10 +43,10 @@ services.libinput.enable = true;
 	programs.firefox.enable = true;
 	programs.niri.enable = true;
 
-nixpkgs.config.allowUnfree = true;
-# You can use https://search.nixos.org/ to find more packages (and options).
+	nixpkgs.config.allowUnfree = true;
+
 	environment.systemPackages = with pkgs; [
-	git
+		git
 		noctalia
 		vim
 		wget
@@ -68,22 +59,14 @@ nixpkgs.config.allowUnfree = true;
 		neovim
 		signal-desktop
 		slack
+		whatsapp-electron
 		nautilus
 
-		# Wayland stuff
 		xwayland-satellite
 		xdg-desktop-portal-gnome
 		kdePackages.polkit-kde-agent-1
 		gnome-keyring
 	];
-
-# Some programs need SUID wrappers, can be configured further or are
-# started in user sessions.
-# programs.mtr.enable = true;
-# programs.gnupg.agent = {
-#   enable = true;
-#   enableSSHSupport = true;
-# };
 
 	services.openssh.enable = true;
 	services.greetd = {
@@ -106,4 +89,3 @@ nixpkgs.config.allowUnfree = true;
 	# DO NOT CHANGE
 	system.stateVersion = "26.05"; # Did you read the comment?
 }
-
