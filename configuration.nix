@@ -8,10 +8,17 @@
     ./hardware-configuration.nix
   ];
 
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader.systemd-boot.enable = false;
+  boot.loader.systemd-boot.configurationLimit = 30;
+
+  boot.loader.grub = {
+    enable = true;
+    efiSupport = true;
+    device = "nodev";
+  };
+
   boot.loader.timeout = null; # wait forever at boot menu
-  boot.loader.systemd-boot.configurationLimit = 5;
+  boot.loader.efi.canTouchEfiVariables = true;
 
   networking.hostName = "zach-nix";
   networking.networkmanager.enable = true;
