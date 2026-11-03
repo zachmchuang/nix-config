@@ -15,7 +15,7 @@
     enable = true;
     efiSupport = true;
     device = "nodev";
-    useOSPober = true;
+    useOSProber = true;
   };
 
   boot.loader.timeout = null; # wait forever at boot menu
@@ -56,17 +56,15 @@
   environment.systemPackages = with pkgs; [
     noctalia
     wget
-    kitty
     waybar
     swaylock
     mako
     brightnessctl
-    neovim
+    vim
     signal-desktop
     slack
     whatsapp-electron
     nautilus
-    lazygit
 
     xwayland-satellite
     xdg-desktop-portal-gnome
@@ -81,6 +79,8 @@
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
+
+  greetd.enable = false;
 
   # DO NOT CHANGE
   system.stateVersion = "26.05"; # Did you read the comment?
