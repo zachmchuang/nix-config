@@ -16,6 +16,11 @@
     efiSupport = true;
     device = "nodev";
     useOSProber = true;
+
+    theme = pkgs.sleek-grub-theme.override {
+      withStyle = "dark";
+      # withBanner = "Welcome, Zach";
+    };
   };
 
   boot.loader.timeout = null; # wait forever at boot menu
@@ -80,7 +85,7 @@
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
-  greetd.enable = false;
+  greetd.enable = true;
 
   # DO NOT CHANGE
   system.stateVersion = "26.05"; # Did you read the comment?
