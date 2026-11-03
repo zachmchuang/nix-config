@@ -59,6 +59,7 @@ services.libinput.enable = true;
 		slack
 		whatsapp-electron
 		nautilus
+		lazygit
 
 		xwayland-satellite
 		xdg-desktop-portal-gnome

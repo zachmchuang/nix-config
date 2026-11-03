@@ -12,10 +12,12 @@
 			"ctrl+backspace" = "send_text all \\x17";
 		};
 		settings = {
-			background_opacity = 0.9;
+			background = "#000000";
+			# background_opacity = 0.9;
 			hide_window_decorations = "yes";
 			enable_audio_bell = "no";
 			confirm_os_window_close = 2;
+			shell = "tmux new-session -A -s main";
 		};
 	};
 }
