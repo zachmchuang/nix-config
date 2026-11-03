@@ -48,10 +48,8 @@ services.libinput.enable = true;
 	environment.systemPackages = with pkgs; [
 		git
 		noctalia
-		vim
 		wget
 		kitty
-		fuzzel
 		waybar
 		swaylock
 		mako
