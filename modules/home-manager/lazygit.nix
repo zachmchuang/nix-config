@@ -13,10 +13,10 @@
       enable = true;
       settings = {
         git = {
-          pagers = [
-            {pager = "delta --dark --paging=never";}
+          diffRenderers = [
+            {command = "delta --dark --paging=never";}
             {
-              pager = "ydiff -p cat -s --wrap --width={{columnWidth}}";
+              command = "ydiff -p cat -s --wrap --width={{columnWidth}}";
               colorArg = "never";
             }
           ];
