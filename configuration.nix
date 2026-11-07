@@ -55,6 +55,7 @@
 
   programs.firefox.enable = true;
   programs.niri.enable = true;
+  programs.nix-ld.enable = true;
 
   nixpkgs.config.allowUnfree = true;
 

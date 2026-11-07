@@ -14,6 +14,7 @@
 
   home.packages = with pkgs; [
     inputs.eric-config.packages.${pkgs.system}.nvim
+    pkgs.cursor-cli
   ];
 
   git.enable = true;
