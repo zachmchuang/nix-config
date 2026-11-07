@@ -68,8 +68,8 @@
     vim
     signal-desktop
     slack
-    whatsapp-electron
     nautilus
+    btop
 
     xwayland-satellite
     xdg-desktop-portal-gnome
