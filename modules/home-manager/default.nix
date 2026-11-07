@@ -6,5 +6,6 @@
     ./niri.nix
     ./lazygit.nix
     ./theme.nix
+    ./kicad.nix
   ];
 }
