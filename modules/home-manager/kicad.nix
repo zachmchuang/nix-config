@@ -1,12 +1,14 @@
 {
   lib,
   config,
+  pkgs,
   ...
 }: {
-  options.kicad.enable = lib.mkEnableOption "Enable kicad";
+  options.kicad.enable = lib.mkEnableOption "Enable KiCad";
+
   config = lib.mkIf config.kicad.enable {
-    programs.kicad = {
-      enable = true;
-    };
+    home.packages = [
+      pkgs.kicad
+    ];
   };
 }

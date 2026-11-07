@@ -14,7 +14,8 @@
 
   home.packages = with pkgs; [
     inputs.eric-config.packages.${pkgs.system}.nvim
-    pkgs.cursor-cli
+    cursor-cli
+    kicad
   ];
 
   git.enable = true;
@@ -23,4 +24,5 @@
   niri.enable = true;
   tmux.enable = true;
   theme.enable = true;
+  kicad.enable = true;
 }
