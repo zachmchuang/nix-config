@@ -14,8 +14,8 @@
 
   home.packages = with pkgs; [
     inputs.eric-config.packages.${pkgs.system}.nvim
-    cursor-cli
     kicad
+    code-cursor
   ];
 
   git.enable = true;

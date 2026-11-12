@@ -15,14 +15,27 @@
     enable = true;
     efiSupport = true;
     device = "nodev";
-    useOSProber = true;
+    # os-prober mislabels Arch and points it at NixOS kernels on the shared ESP
+    useOSProber = false;
 
     theme = pkgs.sleek-grub-theme.override {
       withStyle = "dark";
       # withBanner = "Welcome, Zach";
     };
+
+    # From Arch's leftover systemd-boot entry on the shared ESP
+    extraEntries = ''
+      menuentry "Arch Linux" --class arch {
+        insmod part_gpt
+        insmod fat
+        search --no-floppy --fs-uuid --set=root EC41-E5FD
+        linux /vmlinuz-linux root=PARTUUID=78b0d380-b2b4-41d5-b1b3-0256328000c3 zswap.enabled=0 rw rootfstype=ext4
+        initrd /intel-ucode.img /initramfs-linux.img
+      }
+    '';
   };
 
+  boot.kernelParams = ["quiet"];
   boot.loader.timeout = null; # wait forever at boot menu
   boot.loader.efi.canTouchEfiVariables = true;
 
@@ -55,7 +68,6 @@
 
   programs.firefox.enable = true;
   programs.niri.enable = true;
-  programs.nix-ld.enable = true;
 
   nixpkgs.config.allowUnfree = true;
 
