@@ -7,5 +7,8 @@
     ./lazygit.nix
     ./theme.nix
     ./kicad.nix
+    ./code-cursor.nix
+    ./gh.nix
+    ./java.nix
   ];
 }

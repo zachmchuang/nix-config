@@ -14,8 +14,6 @@
 
   home.packages = with pkgs; [
     inputs.eric-config.packages.${pkgs.system}.nvim
-    kicad
-    code-cursor
   ];
 
   git.enable = true;
@@ -25,4 +23,7 @@
   tmux.enable = true;
   theme.enable = true;
   kicad.enable = true;
+  code-cursor.enable = true;
+  gh.enable = true;
+  java.enable = true;
 }
