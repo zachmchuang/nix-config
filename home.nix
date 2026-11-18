@@ -6,6 +6,7 @@
 }: {
   imports = [
     ./modules/home-manager
+    inputs.nix-index-database.homeModules.default
   ];
 
   home.username = "zach";
@@ -15,6 +16,9 @@
   home.packages = with pkgs; [
     inputs.eric-config.packages.${pkgs.system}.nvim
   ];
+
+  programs.fastfetch.enable = true;
+  programs.nix-index-database.comma.enable = true;
 
   git.enable = true;
   kitty.enable = true;

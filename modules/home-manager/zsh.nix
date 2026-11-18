@@ -16,7 +16,7 @@
         l = "ls -lah";
         la = "ls -a";
         ll = "ls -l";
-        rebuild = "sudo nixos-rebuild switch --flake .#zach-nix";
+        rebuild-nix = "sudo nixos-rebuild switch --flake .#zach-nix";
         n = "nvim";
         cat = "bat";
         ff = "fastfetch";
