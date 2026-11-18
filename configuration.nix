@@ -20,7 +20,7 @@
 
     theme = pkgs.sleek-grub-theme.override {
       withStyle = "dark";
-      # withBanner = "Welcome, Zach";
+      withBanner = "Welcome, Zach";
     };
 
     # From Arch's leftover systemd-boot entry on the shared ESP
@@ -59,15 +59,13 @@
   users.users.zach = {
     isNormalUser = true;
     extraGroups = ["wheel"];
-    shell = pkgs.bash;
+    shell = pkgs.zsh;
     home = "/home/zach";
-    packages = with pkgs; [
-      tree
-    ];
   };
 
   programs.firefox.enable = true;
   programs.niri.enable = true;
+  programs.zsh.enable = true;
 
   nixpkgs.config.allowUnfree = true;
 
@@ -83,6 +81,7 @@
     slack
     nautilus
     btop
+    tree
 
     xwayland-satellite
     xdg-desktop-portal-gnome

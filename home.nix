@@ -26,4 +26,5 @@
   code-cursor.enable = true;
   gh.enable = true;
   java.enable = true;
+  zsh.enable = true;
 }

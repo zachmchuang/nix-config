@@ -10,5 +10,6 @@
     ./code-cursor.nix
     ./gh.nix
     ./java.nix
+    ./zsh.nix
   ];
 }
