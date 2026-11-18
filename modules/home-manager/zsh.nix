@@ -13,9 +13,11 @@
       autosuggestion.enable = true;
       syntaxHighlighting.enable = true;
       shellAliases = {
+        ls = "eza --group-directories-first --icons=auto";
+        lt = "eza --tree --level=2 --long --icons --git";
+        lta = "lt -a";
         l = "ls -lah";
         la = "ls -a";
-        ll = "ls -l";
         rebuild-nix = "sudo nixos-rebuild switch --flake .#zach-nix";
         n = "nvim";
         cat = "bat";
@@ -29,6 +31,7 @@
         fi
       '';
     };
+    programs.eza.enable = true;
     programs.zoxide = {
       enable = true;
       enableZshIntegration = true;
